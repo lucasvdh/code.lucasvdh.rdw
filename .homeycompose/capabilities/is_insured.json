@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Is insured",
+    "nl": "Is verzekerd",
+    "de": "",
+    "fr": "",
+    "it": "",
+    "sv": "",
+    "no": "",
+    "es": "",
+    "da": "",
+    "pl": ""
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "assets/capabilities/shield-car.svg"
+}

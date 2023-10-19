@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Vehicle type",
+    "nl": "Voertuigsoort",
+    "de": "",
+    "fr": "",
+    "it": "",
+    "sv": "",
+    "no": "",
+    "es": "",
+    "da": "",
+    "pl": ""
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "assets/capabilities/car-info.svg"
+}

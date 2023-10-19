@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "License plate",
+    "nl": "Kenteken",
+    "de": "",
+    "fr": "",
+    "it": "",
+    "sv": "",
+    "no": "",
+    "es": "",
+    "da": "",
+    "pl": ""
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "assets/capabilities/car.svg"
+}

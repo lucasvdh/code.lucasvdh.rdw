@@ -1,0 +1,30 @@
+{
+  "id": "upcoming_apk_expiry_date",
+  "title": {
+    "en": "The APK is coming up",
+    "nl": "De APK komt eraan"
+  },
+  "titleFormatted": {
+    "en": "The APK expires in [[days_until_apk]] days",
+    "nl": "De APK verloopt over [[days_until_apk]] dagen"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=vehicle"
+    },
+    {
+      "name": "days_until_apk",
+      "type": "number",
+      "title": {
+        "nl": "Dagen tot APK vervaldatum",
+        "en": "Days until APK expiry date"
+      },
+      "placeholder": {
+        "nl": "7",
+        "en": "7"
+      }
+    }
+  ]
+}

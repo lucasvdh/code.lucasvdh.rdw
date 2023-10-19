@@ -1,0 +1,2 @@
+Verbind je Homey met de RDW en krijg direct toegang tot cruciale gegevens van Nederlandse voertuigen via de kentekencheck.
+Ontvang handige meldingen, zoals herinneringen voor de APK, allemaal naadloos geïntegreerd in je Homey.

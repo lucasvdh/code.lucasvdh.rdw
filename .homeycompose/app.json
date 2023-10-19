@@ -1,0 +1,53 @@
+{
+  "id": "codes.lucasvdh.rdw",
+  "version": "0.1.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#E46F26",
+  "name": {
+    "en": "RDW",
+    "nl": "RDW"
+  },
+  "description": {
+    "en": "Use the public RDW data",
+    "nl": "Maak gebruik van de openbare RDW gegevens"
+  },
+  "category": "internet",
+  "platforms": [
+    "local"
+  ],
+  "tags": {
+    "en": ["RDW", "API", "APK", "Car", "License plate"],
+    "nl": ["RDW", "API", "APK", "Auto", "Kenteken"]
+  },
+  "images": {
+    "xlarge": "./assets/images/xlarge.png",
+    "large": "./assets/images/large.png",
+    "small": "./assets/images/small.png"
+  },
+  "author": {
+    "name": "Lucas van der Have",
+    "email": "lucasvdhave@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Lucas van der Have",
+        "email": "lucasvdhave@gmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "lucasvdh"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/lucasvdh/codes.lucasvdh.rdw/issues"
+  },
+  "source": "https://github.com/lucasvdh/codes.lucasvdh.rdw",
+  "homepage": "https://homey-rdw.gitbook.io/en/",
+  "support": "https://homey-rdw.gitbook.io/en/overview/faq"
+}

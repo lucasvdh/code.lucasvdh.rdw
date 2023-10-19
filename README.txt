@@ -1,0 +1,2 @@
+Connect your Homey with the RDW and gain instant access to crucial information about Dutch vehicles through license plate lookup.
+Receive handy notifications, like reminders for the general periodic inspection (APK), all seamlessly integrated into your Homey.

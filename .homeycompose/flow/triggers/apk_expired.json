@@ -1,0 +1,14 @@
+{
+  "id": "apk_expired",
+  "title": {
+    "en": "The APK is expired",
+    "nl": "De APK is verlopen"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=vehicle"
+    }
+  ]
+}

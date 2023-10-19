@@ -1,0 +1,21 @@
+{
+  "pair": {
+    "add_by_license_plate": {
+      "title": "Kenteken",
+      "license_plate": "Kenteken"
+    },
+    "add_device": {
+      "title": "Apparaat toevoegen"
+    }
+  },
+  "error": {
+    "generic": "Er is een onverwachte fout opgetreden",
+    "unpaired": "Het apparaat is ontkoppeld en moet opnieuw worden gekoppeld",
+    "device_not_found": "Apparaat niet gevonden",
+    "something_went_wrong": "Er is iets misgegaan"
+  },
+  "messages": {
+    "expires_in_a_month": "De APK van __licensePlate__ verloopt over een maand",
+    "has_expired": "De APK van __licensePlate__ is verlopen"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": {
+    "en": "Vehicle",
+    "nl": "Voertuig",
+    "de": "",
+    "fr": "",
+    "it": "",
+    "sv": "",
+    "no": "",
+    "es": "",
+    "da": "",
+    "pl": ""
+  },
+  "connectivity": [
+    "cloud"
+  ],
+  "pair": [
+    {
+      "id": "add_by_license_plate",
+      "navigation": {
+        "next": "verify"
+      }
+    },
+    {
+      "id": "verify",
+      "template": "loading",
+      "options": {
+        "title": {
+          "en": "Verifying",
+          "nl": "Verifiëren",
+          "de": "",
+          "fr": "",
+          "it": "",
+          "sv": "",
+          "no": "",
+          "es": "",
+          "da": "",
+          "pl": ""
+        }
+      }
+    },
+    {
+      "id": "add_my_device"
+    }
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "class": "other",
+  "capabilities": [
+    "license_plate",
+    "vehicle_type",
+    "brand",
+    "trade_name",
+    "apk_expiry_date",
+    "is_insured"
+  ]
+}
