@@ -15,8 +15,7 @@
   },
   "category": "internet",
   "platforms": [
-    "local",
-    "cloud"
+    "local"
   ],
   "tags": {
     "en": [
@@ -179,8 +178,7 @@
         "small": "/drivers/vehicle/assets/images/small.png"
       },
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
       "class": "other",
       "capabilities": [
