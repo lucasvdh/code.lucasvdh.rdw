@@ -1,6 +1,6 @@
 # RDW App for Homey
 
-![RDW Logo](rdw_logo.png)
+![RDW Logo](assets/icon.svg)
 
 This Homey app allows seamless integration with the Netherlands Vehicle Authority (RDW). Easily access open data for Dutch registered vehicles by performing a license plate lookup, all conveniently integrated into your Homey environment.
 
@@ -28,7 +28,7 @@ We welcome contributions from the community! If you'd like to improve the app, p
 
 ## Issues
 
-If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/your-username/rdw-homey-app/issues).
+If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/lucasvdh/codes.lucasvdh.rdw/issues).
 
 ## License
 
