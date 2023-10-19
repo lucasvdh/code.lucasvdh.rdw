@@ -2,5 +2,9 @@
   "0.1.0": {
     "en": "First version",
     "nl": "Eerste versie"
+  },
+  "0.1.1": {
+    "en": "Fix node-fetch version",
+    "nl": "Fix node-fetch versie"
   }
 }

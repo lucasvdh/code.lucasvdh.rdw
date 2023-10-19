@@ -34,7 +34,7 @@ class VehicleDevice extends Device {
     try {
       this.interval = this.homey.setInterval(() => {
         this.syncVehicleData();
-      }, 10000); // check daily
+      }, 24 * 60 * 60 * 1000); // check daily
     } catch (error) {
       this.error(error);
       console.log(error);
@@ -47,6 +47,8 @@ class VehicleDevice extends Device {
   }
 
   async syncVehicleData(): Promise<void> {
+    this.log('Fetching latest vehicle data from RDW');
+
     this.client
         ?.fetchVehicleData(this.getLicensePlate())
         .then((vehicle: Vehicle) => {
@@ -63,6 +65,8 @@ class VehicleDevice extends Device {
   }
 
   private syncVehicleToCapabilities(vehicle: Vehicle) {
+    this.log('Syncing vehicle data to capabilities');
+
     this.setCapabilityValue('license_plate', vehicle.kenteken);
     this.setCapabilityValue('vehicle_type', vehicle.voertuigsoort);
     this.setCapabilityValue('brand', vehicle.merk);
