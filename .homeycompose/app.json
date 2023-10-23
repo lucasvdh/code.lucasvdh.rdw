@@ -49,5 +49,6 @@
   },
   "source": "https://github.com/lucasvdh/codes.lucasvdh.rdw",
   "homepage": "https://homey-rdw.gitbook.io/en/",
-  "support": "https://homey-rdw.gitbook.io/en/overview/faq"
+  "support": "https://homey-rdw.gitbook.io/en/overview/faq",
+  "homeyCommunityTopicId": 92575
 }
