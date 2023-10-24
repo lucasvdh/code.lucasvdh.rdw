@@ -1,6 +1,6 @@
 {
   "name": "codes.lucasvdh.rdw",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "app.ts",
   "scripts": {
     "homey-validate": "homey app validate --level verified",

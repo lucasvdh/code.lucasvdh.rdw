@@ -10,5 +10,9 @@
   "0.1.2": {
     "en": "Add community topic reference",
     "nl": "Voeg community topic referentie toe"
+  },
+  "0.2.0": {
+    "en": "Add new flow triggers and conditions",
+    "nl": "Voeg nieuwe flow triggers en condities toe"
   }
 }
