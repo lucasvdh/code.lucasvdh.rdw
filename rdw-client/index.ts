@@ -58,7 +58,7 @@ export interface Vehicle {
 }
 
 export class RDWClient {
-  async fetchVehicleData(licensePlate: string): Promise<Vehicle> {
+  async fetchVehicleData(licensePlate: string): Promise<Vehicle|undefined> {
     const response = await fetch(`https://opendata.rdw.nl/api/id/m9d7-ebf2.json?$where=(UPPER(kenteken)=UPPER(%27${licensePlate}%27))`, {method: 'GET'});
     const json = await response.json() as Array<Vehicle>;
     return json[0];

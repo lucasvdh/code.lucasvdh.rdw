@@ -86,7 +86,7 @@ class VehicleDevice extends Device {
 
     this.client
         ?.fetchVehicleData(this.getLicensePlate())
-        .then((vehicle: Vehicle) => {
+        .then((vehicle: Vehicle | undefined) => {
           this.syncVehicleToCapabilities(vehicle);
         })
         .catch((error: Error) => {
@@ -99,7 +99,11 @@ class VehicleDevice extends Device {
     this.homey.clearInterval(this.interval)
   }
 
-  private syncVehicleToCapabilities(vehicle: Vehicle) {
+  private syncVehicleToCapabilities(vehicle: Vehicle | undefined) {
+    if (vehicle === undefined) {
+      throw new Error('Vehicle not found!');
+    }
+
     this.log('Syncing vehicle data to capabilities');
 
     const hasExpiryDateChanged = this.getStoreValue('apk_expiry_date') !== vehicle.vervaldatum_apk;

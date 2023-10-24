@@ -34,23 +34,30 @@ class VehicleDriver extends Driver {
 
         pairingClient
             .fetchVehicleData(licensePlate as string)
-            .then((vehicle: Vehicle) => {
-              pairingDevice = {
-                name: vehicle.merk + ' ' + vehicle.handelsbenaming,
-                data: {
-                  id: vehicle.kenteken
-                },
-                settings: {},
-                store: {
-                  license_plate: licensePlate as string,
-                  apk_expiry_date: vehicle.vervaldatum_apk
-                }
-              } as DeviceType;
+            .then(async (vehicle: Vehicle | undefined) => {
+              if (vehicle === undefined) {
+                console.log('error', 'Niet gevonden');
+                session.prevView();
+                session.emit('error', 'Niet gevonden')
+              } else {
+                pairingDevice = {
+                  name: vehicle.merk + ' ' + vehicle.handelsbenaming,
+                  data: {
+                    id: vehicle.kenteken
+                  },
+                  settings: {},
+                  store: {
+                    license_plate: licensePlate as string,
+                    apk_expiry_date: vehicle.vervaldatum_apk
+                  }
+                } as DeviceType;
 
-              session.showView('add_my_device');
+                session.showView('add_my_device');
+              }
             })
             .catch(async (error) => {
-              await session.showView('add_device_by_license_plate');
+              session.prevView();
+
               session.emit('error', error)
             });
       }
