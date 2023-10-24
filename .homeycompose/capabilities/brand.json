@@ -2,15 +2,7 @@
   "type": "string",
   "title": {
     "en": "Brand",
-    "nl": "Merk",
-    "de": "",
-    "fr": "",
-    "it": "",
-    "sv": "",
-    "no": "",
-    "es": "",
-    "da": "",
-    "pl": ""
+    "nl": "Merk"
   },
   "getable": true,
   "setable": false,

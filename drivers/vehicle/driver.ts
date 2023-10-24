@@ -7,6 +7,9 @@ class VehicleDriver extends Driver {
   private apkExpiredTrigger?: FlowCardTriggerDevice;
   private upcomingAPKExpiryDateTrigger?: FlowCardTriggerDevice;
   private isAPKExpiredCondition?: FlowCardCondition;
+  private apkExpiryDateChangedTrigger?: FlowCardTriggerDevice;
+  private openRecallTrigger?: FlowCardTriggerDevice;
+  private hasOpenRecallCondition?: FlowCardCondition;
 
   async onInit(): Promise<void> {
     this.log("Driver has been initialised");
@@ -73,7 +76,9 @@ class VehicleDriver extends Driver {
 
   private async registerFlowCards() {
     this.apkExpiredTrigger = this.homey.flow.getDeviceTriggerCard('apk_expired')
+    this.apkExpiryDateChangedTrigger = this.homey.flow.getDeviceTriggerCard('apk_expiry_date_changed')
     this.upcomingAPKExpiryDateTrigger = this.homey.flow.getDeviceTriggerCard('upcoming_apk_expiry_date')
+    this.openRecallTrigger = this.homey.flow.getDeviceTriggerCard('open_recall')
 
     this.upcomingAPKExpiryDateTrigger.registerRunListener(async (args, state) => {
       return args.days_until_apk >= state.days_until_apk;
@@ -85,6 +90,21 @@ class VehicleDriver extends Driver {
 
       return daysUntilAPK <= 0;
     });
+
+    this.hasOpenRecallCondition = this.homey.flow.getConditionCard('has_open_recall');
+    this.hasOpenRecallCondition.registerRunListener(async (args: { device: VehicleDevice }, state) => {
+      return args.device.getCapabilityValue('open_recall_indicator') === 'Ja';
+    });
+  }
+
+  public triggerAPKExpiryDateChangedTrigger(device: VehicleDevice, args: { date: string }) {
+    this.apkExpiryDateChangedTrigger?.trigger(device, {
+      date: args.date,
+    });
+  }
+
+  public triggerOpenRecallTrigger(device: VehicleDevice) {
+    this.openRecallTrigger?.trigger(device);
   }
 
   public triggerAPKExpiryTriggers(device: VehicleDevice, args: { date: string }) {

@@ -2,15 +2,7 @@
   "type": "string",
   "title": {
     "en": "License plate",
-    "nl": "Kenteken",
-    "de": "",
-    "fr": "",
-    "it": "",
-    "sv": "",
-    "no": "",
-    "es": "",
-    "da": "",
-    "pl": ""
+    "nl": "Kenteken"
   },
   "getable": true,
   "setable": false,

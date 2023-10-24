@@ -2,15 +2,7 @@
   "type": "string",
   "title": {
     "en": "APK expiry date",
-    "nl": "APK vervaldatum",
-    "de": "",
-    "fr": "",
-    "it": "",
-    "sv": "",
-    "no": "",
-    "es": "",
-    "da": "",
-    "pl": ""
+    "nl": "APK vervaldatum"
   },
   "getable": true,
   "setable": false,

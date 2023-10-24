@@ -13,6 +13,8 @@ class VehicleDevice extends Device {
   async onInit(): Promise<void> {
     this.log('Device has been initialized');
 
+    await this.fixCapabilities();
+
     this.client = new RDWClient();
 
     await this.initializeClient();
@@ -38,6 +40,39 @@ class VehicleDevice extends Device {
     } catch (error) {
       this.error(error);
       console.log(error);
+    }
+  }
+
+  async fixCapabilities() {
+    // let oldCapabilities = [
+    // ];
+
+    let newCapabilities = [
+      "open_recall_indicator"
+    ]
+
+    // for (let i in oldCapabilities) {
+    //   let oldCapability = oldCapabilities[i]
+    //
+    //   if (this.hasCapability(oldCapability)) {
+    //     this.log('Removing old capability: ' + oldCapability)
+    //     this.removeCapability(oldCapability)
+    //         .catch(error => {
+    //           this.log(error);
+    //         })
+    //   }
+    // }
+
+    for (let i in newCapabilities) {
+      let newCapability = newCapabilities[i]
+
+      if (!this.hasCapability(newCapability)) {
+        this.log('Adding new capability: ' + newCapability)
+        await this.addCapability(newCapability)
+            .catch(error => {
+              this.log(error);
+            })
+      }
     }
   }
 
@@ -67,18 +102,37 @@ class VehicleDevice extends Device {
   private syncVehicleToCapabilities(vehicle: Vehicle) {
     this.log('Syncing vehicle data to capabilities');
 
+    const hasExpiryDateChanged = this.getStoreValue('apk_expiry_date') !== vehicle.vervaldatum_apk;
+    const hasOpenRecallChanged = this.getStoreValue('open_recall_indicator') !== vehicle.openstaande_terugroepactie_indicator;
+
     this.setCapabilityValue('license_plate', vehicle.kenteken);
     this.setCapabilityValue('vehicle_type', vehicle.voertuigsoort);
     this.setCapabilityValue('brand', vehicle.merk);
     this.setCapabilityValue('trade_name', vehicle.handelsbenaming);
     this.setCapabilityValue('is_insured', vehicle.wam_verzekerd);
     this.setCapabilityValue('apk_expiry_date', this.formatDate(vehicle.vervaldatum_apk));
+    this.setCapabilityValue('open_recall_indicator', vehicle.openstaande_terugroepactie_indicator);
 
-    this.getVehicleDriver().triggerAPKExpiryTriggers(this, {
+    const driver = this.getVehicleDriver();
+
+    driver.triggerAPKExpiryTriggers(this, {
       date: vehicle.vervaldatum_apk,
     });
 
-    this.setStoreValue('apk_expiry_date', vehicle.vervaldatum_apk);
+    if (hasExpiryDateChanged) {
+      driver.triggerAPKExpiryDateChangedTrigger(this, {
+        date: this.formatDate(vehicle.vervaldatum_apk),
+      });
+    }
+
+    if (hasOpenRecallChanged && vehicle.openstaande_terugroepactie_indicator === 'Ja') {
+      driver.triggerOpenRecallTrigger(this);
+    }
+
+    this.setStoreValue('apk_expiry_date', vehicle.vervaldatum_apk)
+        .catch((error: Error) => this.error(error));
+    this.setStoreValue('open_recall_indicator', vehicle.openstaande_terugroepactie_indicator)
+        .catch((error: Error) => this.error(error));
   }
 
   private getVehicleDriver(): VehicleDriver {

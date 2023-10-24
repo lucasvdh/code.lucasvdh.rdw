@@ -1,0 +1,25 @@
+{
+  "id": "apk_expiry_date_changed",
+  "title": {
+    "en": "The APK expiry date has changed",
+    "nl": "De APK vervaldatum is gewijzigd"
+  },
+  "tokens": [
+    {
+      "name": "new_date",
+      "type": "string",
+      "title": {
+        "en": "New date",
+        "nl": "Nieuwe datum"
+      },
+      "example": "2025-01-25"
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=vehicle"
+    }
+  ]
+}

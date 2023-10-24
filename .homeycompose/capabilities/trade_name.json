@@ -2,15 +2,7 @@
   "type": "string",
   "title": {
     "en": "Trade name",
-    "nl": "Handelsbenaming",
-    "de": "",
-    "fr": "",
-    "it": "",
-    "sv": "",
-    "no": "",
-    "es": "",
-    "da": "",
-    "pl": ""
+    "nl": "Handelsbenaming"
   },
   "getable": true,
   "setable": false,

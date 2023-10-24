@@ -1,12 +1,12 @@
 {
   "type": "string",
   "title": {
-    "en": "Vehicle type",
-    "nl": "Voertuigsoort"
+    "en": "Open recall",
+    "nl": "Openstaande terugroepactie"
   },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
   "uiQuickAction": false,
-  "icon": "assets/capabilities/car-info.svg"
+  "icon": "assets/capabilities/message-alert.svg"
 }

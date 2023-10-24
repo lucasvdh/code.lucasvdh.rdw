@@ -81,6 +81,45 @@
         ]
       },
       {
+        "id": "apk_expiry_date_changed",
+        "title": {
+          "en": "The APK expiry date has changed",
+          "nl": "De APK vervaldatum is gewijzigd"
+        },
+        "tokens": [
+          {
+            "name": "new_date",
+            "type": "string",
+            "title": {
+              "en": "New date",
+              "nl": "Nieuwe datum"
+            },
+            "example": "2025-01-25"
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=vehicle"
+          }
+        ]
+      },
+      {
+        "id": "open_recall",
+        "title": {
+          "en": "There is a recall",
+          "nl": "Er is een terugroepactie"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=vehicle"
+          }
+        ]
+      },
+      {
         "id": "upcoming_apk_expiry_date",
         "title": {
           "en": "The APK is coming up",
@@ -114,6 +153,20 @@
     "conditions": [
       {
         "title": {
+          "nl": "Er !{{is|is geen}} openstaande terugroepactie",
+          "en": "!{{Has|Doesn't have}} an open recall action"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=vehicle"
+          }
+        ],
+        "id": "has_open_recall"
+      },
+      {
+        "title": {
           "nl": "De APK !{{is|is nog niet}} verlopen",
           "en": "The APK !{{is|has not yet}} expired"
         },
@@ -132,15 +185,7 @@
     {
       "name": {
         "en": "Vehicle",
-        "nl": "Voertuig",
-        "de": "",
-        "fr": "",
-        "it": "",
-        "sv": "",
-        "no": "",
-        "es": "",
-        "da": "",
-        "pl": ""
+        "nl": "Voertuig"
       },
       "connectivity": [
         "cloud"
@@ -158,15 +203,7 @@
           "options": {
             "title": {
               "en": "Verifying",
-              "nl": "Verifiëren",
-              "de": "",
-              "fr": "",
-              "it": "",
-              "sv": "",
-              "no": "",
-              "es": "",
-              "da": "",
-              "pl": ""
+              "nl": "Verifiëren"
             }
           }
         },
@@ -188,7 +225,8 @@
         "brand",
         "trade_name",
         "apk_expiry_date",
-        "is_insured"
+        "is_insured",
+        "open_recall_indicator"
       ],
       "id": "vehicle"
     }
@@ -198,15 +236,7 @@
       "type": "string",
       "title": {
         "en": "APK expiry date",
-        "nl": "APK vervaldatum",
-        "de": "",
-        "fr": "",
-        "it": "",
-        "sv": "",
-        "no": "",
-        "es": "",
-        "da": "",
-        "pl": ""
+        "nl": "APK vervaldatum"
       },
       "getable": true,
       "setable": false,
@@ -218,15 +248,7 @@
       "type": "string",
       "title": {
         "en": "Brand",
-        "nl": "Merk",
-        "de": "",
-        "fr": "",
-        "it": "",
-        "sv": "",
-        "no": "",
-        "es": "",
-        "da": "",
-        "pl": ""
+        "nl": "Merk"
       },
       "getable": true,
       "setable": false,
@@ -238,15 +260,7 @@
       "type": "string",
       "title": {
         "en": "Is insured",
-        "nl": "Is verzekerd",
-        "de": "",
-        "fr": "",
-        "it": "",
-        "sv": "",
-        "no": "",
-        "es": "",
-        "da": "",
-        "pl": ""
+        "nl": "Is verzekerd"
       },
       "getable": true,
       "setable": false,
@@ -258,15 +272,7 @@
       "type": "string",
       "title": {
         "en": "License plate",
-        "nl": "Kenteken",
-        "de": "",
-        "fr": "",
-        "it": "",
-        "sv": "",
-        "no": "",
-        "es": "",
-        "da": "",
-        "pl": ""
+        "nl": "Kenteken"
       },
       "getable": true,
       "setable": false,
@@ -274,19 +280,23 @@
       "uiQuickAction": false,
       "icon": "assets/capabilities/car.svg"
     },
+    "open_recall_indicator": {
+      "type": "string",
+      "title": {
+        "en": "Open recall",
+        "nl": "Openstaande terugroepactie"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "assets/capabilities/message-alert.svg"
+    },
     "trade_name": {
       "type": "string",
       "title": {
         "en": "Trade name",
-        "nl": "Handelsbenaming",
-        "de": "",
-        "fr": "",
-        "it": "",
-        "sv": "",
-        "no": "",
-        "es": "",
-        "da": "",
-        "pl": ""
+        "nl": "Handelsbenaming"
       },
       "getable": true,
       "setable": false,
@@ -298,15 +308,7 @@
       "type": "string",
       "title": {
         "en": "Vehicle type",
-        "nl": "Voertuigsoort",
-        "de": "",
-        "fr": "",
-        "it": "",
-        "sv": "",
-        "no": "",
-        "es": "",
-        "da": "",
-        "pl": ""
+        "nl": "Voertuigsoort"
       },
       "getable": true,
       "setable": false,

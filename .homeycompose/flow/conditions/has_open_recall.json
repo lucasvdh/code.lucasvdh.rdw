@@ -1,0 +1,13 @@
+{
+  "title": {
+    "nl": "Er !{{is|is geen}} openstaande terugroepactie",
+    "en": "!{{Has|Doesn't have}} an open recall action"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=vehicle"
+    }
+  ]
+}

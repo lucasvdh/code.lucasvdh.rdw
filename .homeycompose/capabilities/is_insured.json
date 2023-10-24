@@ -2,15 +2,7 @@
   "type": "string",
   "title": {
     "en": "Is insured",
-    "nl": "Is verzekerd",
-    "de": "",
-    "fr": "",
-    "it": "",
-    "sv": "",
-    "no": "",
-    "es": "",
-    "da": "",
-    "pl": ""
+    "nl": "Is verzekerd"
   },
   "getable": true,
   "setable": false,

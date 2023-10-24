@@ -1,15 +1,7 @@
 {
   "name": {
     "en": "Vehicle",
-    "nl": "Voertuig",
-    "de": "",
-    "fr": "",
-    "it": "",
-    "sv": "",
-    "no": "",
-    "es": "",
-    "da": "",
-    "pl": ""
+    "nl": "Voertuig"
   },
   "connectivity": [
     "cloud"
@@ -27,15 +19,7 @@
       "options": {
         "title": {
           "en": "Verifying",
-          "nl": "Verifiëren",
-          "de": "",
-          "fr": "",
-          "it": "",
-          "sv": "",
-          "no": "",
-          "es": "",
-          "da": "",
-          "pl": ""
+          "nl": "Verifiëren"
         }
       }
     },
@@ -57,6 +41,7 @@
     "brand",
     "trade_name",
     "apk_expiry_date",
-    "is_insured"
+    "is_insured",
+    "open_recall_indicator"
   ]
 }
