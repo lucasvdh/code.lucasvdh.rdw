@@ -14,5 +14,9 @@
   "0.2.0": {
     "en": "Add new flow triggers and conditions",
     "nl": "Voeg nieuwe flow triggers en condities toe"
+  },
+  "0.3.0": {
+    "en": "Add validation message translations",
+    "nl": "Voeg nieuwe verificatie melding vertalingen toe"
   }
 }
