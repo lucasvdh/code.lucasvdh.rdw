@@ -20,8 +20,8 @@
 
   Homey.setTitle(Homey.__('pair.add_by_license_plate.title'))
 
-  Homey.on('alert', function (message) {
-    Homey.alert(message)
+  Homey.on('error', function (message) {
+    Homey.alert(message, 'warning')
   })
 
   Homey.emit('getLicensePlate').then(function (licensePlate) {

@@ -36,9 +36,8 @@ class VehicleDriver extends Driver {
             .fetchVehicleData(licensePlate as string)
             .then(async (vehicle: Vehicle | undefined) => {
               if (vehicle === undefined) {
-                console.log('error', 'Niet gevonden');
-                session.prevView();
-                session.emit('error', 'Niet gevonden')
+                await session.prevView();
+                session.emit('error', this.homey.__('messages.license_plate_not_found', {licensePlate}))
               } else {
                 pairingDevice = {
                   name: vehicle.merk + ' ' + vehicle.handelsbenaming,
@@ -58,7 +57,7 @@ class VehicleDriver extends Driver {
             .catch(async (error) => {
               session.prevView();
 
-              session.emit('error', error)
+              session.emit('error', this.homey.__('messages.something_went_wrong', {error}))
             });
       }
     });
