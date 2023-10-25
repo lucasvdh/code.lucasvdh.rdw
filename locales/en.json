@@ -16,6 +16,8 @@
   },
   "messages": {
     "expires_in_a_month": "The APK of __licensePlate__ expires in a month",
-    "has_expired": "The APK of __licensePlate__ has expired"
+    "has_expired": "The APK of __licensePlate__ has expired",
+    "license_plate_not_found": "The license plate \"__licensePlate__\" was not found",
+    "something_went_wrong": "Something went wrong \"__error__\""
   }
 }

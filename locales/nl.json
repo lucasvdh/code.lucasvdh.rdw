@@ -16,6 +16,8 @@
   },
   "messages": {
     "expires_in_a_month": "De APK van __licensePlate__ verloopt over een maand",
-    "has_expired": "De APK van __licensePlate__ is verlopen"
+    "has_expired": "De APK van __licensePlate__ is verlopen",
+    "license_plate_not_found": "Het kenteken \"__licensePlate__\" is niet gevonden",
+    "something_went_wrong": "Er ging iets mis \"__error__\""
   }
 }
