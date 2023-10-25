@@ -106,6 +106,20 @@
         ]
       },
       {
+        "id": "insurance_has_expired",
+        "title": {
+          "en": "Insurance has expired",
+          "nl": "Verzekering is verlopen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=vehicle"
+          }
+        ]
+      },
+      {
         "id": "open_recall",
         "title": {
           "en": "There is a recall",
@@ -178,6 +192,20 @@
           }
         ],
         "id": "is_apk_expired"
+      },
+      {
+        "title": {
+          "nl": "!{{Is|Is niet}} verzekerd",
+          "en": "!{{Is|Is not}} insured"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=vehicle"
+          }
+        ],
+        "id": "is_insured"
       }
     ]
   },

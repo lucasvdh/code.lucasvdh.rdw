@@ -4,12 +4,16 @@ import VehicleDevice from "./device";
 import {RDWClient, Vehicle} from "../../rdw-client";
 
 class VehicleDriver extends Driver {
+  // Triggers
   private apkExpiredTrigger?: FlowCardTriggerDevice;
   private upcomingAPKExpiryDateTrigger?: FlowCardTriggerDevice;
-  private isAPKExpiredCondition?: FlowCardCondition;
   private apkExpiryDateChangedTrigger?: FlowCardTriggerDevice;
   private openRecallTrigger?: FlowCardTriggerDevice;
+  private insuranceHasExpiredTrigger?: FlowCardTriggerDevice;
+  // Conditions
+  private isAPKExpiredCondition?: FlowCardCondition;
   private hasOpenRecallCondition?: FlowCardCondition;
+  private isInsuredCondition?: FlowCardCondition;
 
   async onInit(): Promise<void> {
     this.log("Driver has been initialised");
@@ -85,6 +89,7 @@ class VehicleDriver extends Driver {
     this.apkExpiryDateChangedTrigger = this.homey.flow.getDeviceTriggerCard('apk_expiry_date_changed')
     this.upcomingAPKExpiryDateTrigger = this.homey.flow.getDeviceTriggerCard('upcoming_apk_expiry_date')
     this.openRecallTrigger = this.homey.flow.getDeviceTriggerCard('open_recall')
+    this.insuranceHasExpiredTrigger = this.homey.flow.getDeviceTriggerCard('insurance_has_expired')
 
     this.upcomingAPKExpiryDateTrigger.registerRunListener(async (args, state) => {
       return args.days_until_apk >= state.days_until_apk;
@@ -101,6 +106,11 @@ class VehicleDriver extends Driver {
     this.hasOpenRecallCondition.registerRunListener(async (args: { device: VehicleDevice }, state) => {
       return args.device.getCapabilityValue('open_recall_indicator') === 'Ja';
     });
+
+    this.isInsuredCondition = this.homey.flow.getConditionCard('is_insured');
+    this.isInsuredCondition.registerRunListener(async (args: { device: VehicleDevice }, state) => {
+      return args.device.getCapabilityValue('is_insured') === 'Ja';
+    });
   }
 
   public triggerAPKExpiryDateChangedTrigger(device: VehicleDevice, args: { date: string }) {
@@ -111,6 +121,10 @@ class VehicleDriver extends Driver {
 
   public triggerOpenRecallTrigger(device: VehicleDevice) {
     this.openRecallTrigger?.trigger(device);
+  }
+
+  public triggerInsuranceHasExpiredTrigger(device: VehicleDevice) {
+    this.insuranceHasExpiredTrigger?.trigger(device);
   }
 
   public triggerAPKExpiryTriggers(device: VehicleDevice, args: { date: string }) {

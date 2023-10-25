@@ -1,0 +1,14 @@
+{
+  "id": "insurance_has_expired",
+  "title": {
+    "en": "Insurance has expired",
+    "nl": "Verzekering is verlopen"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=vehicle"
+    }
+  ]
+}

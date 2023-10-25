@@ -1,0 +1,13 @@
+{
+  "title": {
+    "nl": "!{{Is|Is niet}} verzekerd",
+    "en": "!{{Is|Is not}} insured"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=vehicle"
+    }
+  ]
+}

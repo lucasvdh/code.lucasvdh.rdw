@@ -16,7 +16,7 @@
     "nl": "Voeg nieuwe flow triggers en condities toe"
   },
   "0.3.0": {
-    "en": "Add validation message translations",
-    "nl": "Voeg nieuwe verificatie melding vertalingen toe"
+    "en": "Add validation message translations and new insurance triggers and conditions",
+    "nl": "Voeg vertalingen toe voor validatiemeldingen en nieuwe verzekeringstriggers en condities"
   }
 }

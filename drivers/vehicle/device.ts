@@ -108,6 +108,7 @@ class VehicleDevice extends Device {
 
     const hasExpiryDateChanged = this.getStoreValue('apk_expiry_date') !== vehicle.vervaldatum_apk;
     const hasOpenRecallChanged = this.getStoreValue('open_recall_indicator') !== vehicle.openstaande_terugroepactie_indicator;
+    const hasIsInsuredChanged = this.getStoreValue('is_insured') !== vehicle.wam_verzekerd;
 
     this.setCapabilityValue('license_plate', vehicle.kenteken);
     this.setCapabilityValue('vehicle_type', vehicle.voertuigsoort);
@@ -133,9 +134,15 @@ class VehicleDevice extends Device {
       driver.triggerOpenRecallTrigger(this);
     }
 
+    if (hasIsInsuredChanged && vehicle.wam_verzekerd === 'Ja') {
+      driver.triggerInsuranceHasExpiredTrigger(this);
+    }
+
     this.setStoreValue('apk_expiry_date', vehicle.vervaldatum_apk)
         .catch((error: Error) => this.error(error));
     this.setStoreValue('open_recall_indicator', vehicle.openstaande_terugroepactie_indicator)
+        .catch((error: Error) => this.error(error));
+    this.setStoreValue('is_insured', vehicle.wam_verzekerd)
         .catch((error: Error) => this.error(error));
   }
 
